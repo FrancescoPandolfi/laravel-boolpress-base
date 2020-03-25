@@ -44,19 +44,21 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', ['post' => $post]);
     }
 
 
     public function update(Request $request, Post $post)
     {
-        //
+        $validated = $request->validate($this->toValidate);
+        $post->update($validated);
+        return redirect(route('posts.show', $post));
     }
 
     public function destroy(Post $post)
     {
         $post->delete();
         $posts = Post::latest()->get();
-        return redirect(route('posts.index'));
+        return redirect()->route('posts.index')->with('delete', " You deleted the post with id: $post->id");
     }
 }

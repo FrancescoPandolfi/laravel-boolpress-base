@@ -4,6 +4,12 @@
         
     <div class="container">
         <div class="row">
+                @if (session('delete'))
+                    <div class="alert alert-success">
+                        {{ session('delete') }}
+                    </div>
+                @endif
+
                 @foreach ($posts as $post)
                 <div class="col-lg-4 col-md-6 col-xs-12"> 
                     <div class="card mb-3">
