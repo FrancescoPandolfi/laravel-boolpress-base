@@ -14,7 +14,9 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
           {{-- <a class="nav-item nav-link" href="{{asset('articles/create')}}">Add new article</a> --}}
-          </div>
+          <a href="{{asset('posts/create')}}"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Add new post</button>
+          </a>
+        </div>
         </div>
     </nav>
 

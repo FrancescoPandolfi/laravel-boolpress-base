@@ -19,14 +19,8 @@
                             <p class="card-text">{{ $post->body }}</p>
                             <p class="card-text"><small class="text-muted">by {{ $post->author }}</small></p>
 
-                            <form action="{{route('posts.destroy', $post)}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger float-right ">Delete</button>
-                            </form>
-
-                            <a href="{{route('posts.edit', $post)}}" class="btn btn-info float-right mr-3">Edit</a>
-                            <a href="{{route('posts.show', $post)}}" class="btn btn-success float-right mr-3">Show</a>
+                            {{-- SHOW BUTTON --}}
+                            <a href="{{route('posts.show', $post)}}" class="btn btn-dark float-right mr-3">Read all</a>
                             
                         </div>
                     </div>
