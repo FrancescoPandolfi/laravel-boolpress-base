@@ -4,29 +4,28 @@
         
     <div class="container">
         <div class="row">
-            TEST
-                {{-- @foreach ($articles as $article)
+                @foreach ($posts as $post)
                 <div class="col-lg-4 col-md-6 col-xs-12"> 
                     <div class="card mb-3">
-                        <img class="card-img-top" src="{{ $article->img }}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ $post->image }}" alt="Card image cap">
                         <div class="card-body">
-                            <h2 class="card-title">{{ $article->title }}</h2>
-                            <p class="card-text">{{ $article->body }}</p>
-                            <p class="card-text"><small class="text-muted">by {{ $article->author }}</small></p>
+                            <h2 class="card-title">{{ $post->title }}</h2>
+                            <p class="card-text">{{ $post->body }}</p>
+                            <p class="card-text"><small class="text-muted">by {{ $post->author }}</small></p>
 
-                            <form action="{{route('articles.destroy', $article)}}" method="post">
+                            <form action="{{route('posts.destroy', $post)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger float-right ">Delete</button>
                             </form>
 
-                            <a href="{{route('articles.edit', $article)}}" class="btn btn-info float-right mr-3">Edit</a>
-                            <a href="{{route('articles.show', $article)}}" class="btn btn-success float-right mr-3">Show</a>
+                            <a href="{{route('posts.edit', $post)}}" class="btn btn-info float-right mr-3">Edit</a>
+                            <a href="{{route('posts.show', $post)}}" class="btn btn-success float-right mr-3">Show</a>
                             
                         </div>
                     </div>
                 </div>
-                @endforeach --}}
+                @endforeach
         </div>
     </div>
 
