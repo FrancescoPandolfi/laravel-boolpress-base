@@ -32,13 +32,13 @@ class PostsController extends Controller
     {
         $validated = $request->validate($this->toValidate);
         Post::create($validated);
-        // return redirect(route('posts.show', ['post' => Post::all()->last()]));
+        return redirect(route('posts.show', ['post' => Post::all()->last()]));
     }
 
 
     public function show(Post $post)
     {
-        //
+        return view('posts.show', ['post' => $post]);
     }
 
 
@@ -55,6 +55,8 @@ class PostsController extends Controller
 
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        $posts = Post::latest()->get();
+        return redirect(route('posts.index'));
     }
 }
