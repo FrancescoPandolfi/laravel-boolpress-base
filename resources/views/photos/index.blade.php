@@ -13,7 +13,7 @@
                 @foreach ($photos as $photo)
                 <div class="col-lg-4 col-md-6 col-xs-12"> 
                     <div class="card mb-3">
-                        <img class="card-img-top" src="{{ $photo->image_path }}" alt="Card image cap">
+                        <a href="{{route('photos.show', $photo)}}"><img class="card-img-top" src="{{ $photo->image_path }}" alt="Card image cap"></a>
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">by {{ $photo->user->name }}</small></p>
 

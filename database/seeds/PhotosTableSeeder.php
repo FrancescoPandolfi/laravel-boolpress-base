@@ -16,8 +16,8 @@ class PhotosTableSeeder extends Seeder
         for ($i=0; $i < 10; $i++) { 
             $newPhoto = new Photo();
 
-            $newPhoto->image_path = 'https://picsum.photos/id/'. rand(1, 100) .'/300/200';
-            
+            $newPhoto->image_path = 'https://picsum.photos/id/'. rand(1, 100) .'/600/400';
+
             $newPhoto->user_id = rand(1, 4);
             $newPhoto->save();
         }
