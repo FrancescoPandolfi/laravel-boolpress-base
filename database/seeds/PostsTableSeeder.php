@@ -22,6 +22,9 @@ class PostsTableSeeder extends Seeder
             $Post->author = $faker->firstNameMale;
             $Post->body = $faker->paragraph;
             $Post->slug = Str::slug($Post->title);
+
+            $Post->user_id = rand(1, 4);
+
             $Post->save();
         }
     }
